@@ -9,11 +9,11 @@ var total =0;
 function tableHTML(i) {
     return `
         <tr>
-        <th scope="row">${i+1} </th>   
-        <th><img style="width:90px;" src="${products[i].url}"></th>
-        <td>${products[i].name}</td>
-        <td>1</td>
-        <td>${products[i].price}</td>
+            <th scope="row">${i+1} </th>   
+            <th><img style="width:90px;" src="${products[i].url}"></th>
+            <td>${products[i].name}</td>
+            <td>1</td>
+            <td>${products[i].price}</td>
         </tr>
     `;
 }
@@ -27,11 +27,11 @@ function clean() {
     total=0;
     table.innerHTML=`
         <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
         </tr>
     `;  
     cart_n.innerHTML='';
@@ -40,17 +40,17 @@ function clean() {
 }
 
 (()=>{
-for (let index = 0; index < products.length; index++) {
-    table.innerHTML+=tableHTML(index);
-    total=total+parseInt(products[index].price);
-    }
+    for (let index = 0; index < products.length; index++) {
+        table.innerHTML+=tableHTML(index);
+        total=total+parseInt(products[index].price);
+        }
     table.innerHTML+=`
     <tr>
-    <th scope="col"> </th>
-    <th scope="col"> </th>
-    <th scope="col"> </th>
-    <th scope="col"> </th>
-    <th scope="col">Total:$${total}.00 </th>
+        <th scope="col"> </th>
+        <th scope="col"> </th>
+        <th scope="col"> </th>
+        <th scope="col"> </th>
+        <th scope="col">Total:$${total}.00 </th>
     </tr>
     <tr>
     <th scope="col"> </th>
@@ -75,13 +75,13 @@ for (let index = 0; index < products.length; index++) {
 })();
 var form=document.getElementById('form1');
 document.getElementById('submitbtn').addEventListener('click',()=>{
-   localStorage.clear();
+    localStorage.clear();
    setTimeout(()=>{
     sub();
    },5000); 
 });
 function sub() {
     setTimeout(()=>{
-        form.onsubmit();
+        form.submit();
     },5000);
 }
