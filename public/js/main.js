@@ -29,7 +29,7 @@ function HTMLbProduct(con) {
     let URL = `../img/b/b${con}.jpeg`;
     let btn = `btnB${con}`;
     return `
-        <div class="card mb-4 shadow-sm">
+        <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
                 <img class="card-img-top" style="height:16rem;" src="${URL}" alt="Card image cap">
                 <div class="card-body">
@@ -56,7 +56,7 @@ function HTMLcProduct(con) {
     let URL = `../img/c/c${con}.jpeg`;
     let btn = `btnC${con}`;
     return `
-        <div class="card mb-4 shadow-sm">
+        <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
                 <img class="card-img-top" style="height:16rem;" src="${URL}" alt="Card image cap">
                 <div class="card-body">
@@ -83,7 +83,7 @@ function HTMLdProduct(con) {
     let URL = `../img/d/d${con}.jpeg`;
     let btn = `btnD${con}`;
     return `
-        <div class="card mb-4 shadow-sm">
+        <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
                 <img class="card-img-top" style="height:16rem;" src="${URL}" alt="Card image cap">
                 <div class="card-body">
