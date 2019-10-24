@@ -18,7 +18,7 @@ defaultLayout: 'mainLayout',
 layoutsDir: __dirname+'/views/'
 }));
 app.set('view engine', 'hbs');
-const port = 3000 ||process.env.port;
+const port = process.env.port || 3000;
 app.listen(port,()=> {
     console.log('Server on port 3000');
 });
