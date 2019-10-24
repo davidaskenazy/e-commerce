@@ -8,21 +8,21 @@ var cDiv = document.getElementById("cDIV");
 var dDiv = document.getElementById("dDIV");
 //INFORMATION
 var B=[
-    {name:'ba',price:1},
-    {name:'bb',price:1},
-    {name:'bc',price:1},
-    {name:'bd',price:1},
-    {name:'be',price:1},
-    {name:'bf',price:1}
+    {name:'aa',price:1},
+    {name:'ab',price:1},
+    {name:'ac',price:1},
+    {name:'ad',price:1},
+    {name:'ae',price:1},
+    {name:'af',price:1}
 ];
 var C=[
+    {name:'ba',price:1},
+    {name:'bb',price:1},
+    {name:'bc',price:1}];
+var D=[
     {name:'ca',price:1},
     {name:'cb',price:1},
-    {name:'cc',price:1}];
-var D=[
-    {name:'da',price:1},
-    {name:'db',price:1},
-    {name:'dc',price:1}
+    {name:'cc',price:1}
 ];
 //HTML
 function HTMLbProduct(con) {
