@@ -18,8 +18,9 @@ defaultLayout: 'mainLayout',
 layoutsDir: __dirname+'/views/'
 }));
 app.set('view engine', 'hbs');
-app.listen(3000,()=> {
-    console.log('Server on port 3000')
+const port = 3000;
+app.listen(port,()=> {
+    console.log('Server on port 3000');
 });
 app.use('/',orderController);
 //modificar puerto !
