@@ -3,11 +3,11 @@ var products=[];
 var cartItems=[];
 var cart_n = document.getElementById('cart_n');
 //DIVS
-var bDiv = document.getElementById("bDIV");
-var cDiv = document.getElementById("cDIV");
-var dDiv = document.getElementById("dDIV");
+var bDiv = document.getElementById("aDIV");
+var cDiv = document.getElementById("bDIV");
+var dDiv = document.getElementById("cDIV");
 //INFORMATION
-var B=[
+var A=[
     {name:'aa',price:1},
     {name:'ab',price:1},
     {name:'ac',price:1},
@@ -15,16 +15,43 @@ var B=[
     {name:'ae',price:1},
     {name:'af',price:1}
 ];
-var C=[
+var B=[
     {name:'ba',price:1},
     {name:'bb',price:1},
     {name:'bc',price:1}];
-var D=[
+var C=[
     {name:'ca',price:1},
     {name:'cb',price:1},
     {name:'cc',price:1}
 ];
 //HTML
+function HTMLaProduct(con) {
+    let URL = `../img/a/a${con}.jpeg`;
+    let btn = `btnA${con}`;
+    return `
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" style="height:16rem;" src="${URL}" alt="Card image cap">
+                <div class="card-body">
+                <i style="color:orange;" class="fa fa-star" > </i>
+                <i style="color:orange;" class="fa fa-star" > </i>
+                <i style="color:orange;" class="fa fa-star" > </i>
+                <i style="color:orange;" class="fa fa-star" > </i>
+                <i style="color:orange;" class="fa fa-star" > </i>
+                <p class="card-text">${A[con-1].name}</p>
+                <p class="card-text">${A[con-1].price}.00</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <button type="button" onclick="cart2('${A[con-1].name}','${A[con-1].price}','${URL}','${con}','${btn}')" class="btn btn-sm btn-outline-secundary" ><a style="color:inherit;" href="/cart">Comprar</a></button>
+                        <button id="${btn}" type="button" onclick="cart('${A[con-1].name}','${A[con-1].price}','${URL}','${con}','${btn}')" class="btn btn-sm btn-outline-secundary" > Añadir</button>
+                     </div>
+                     <small class="text-muted">Envio gratis</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `
+}
 function HTMLbProduct(con) {
     let URL = `../img/b/b${con}.jpeg`;
     let btn = `btnB${con}`;
@@ -50,7 +77,7 @@ function HTMLbProduct(con) {
                 </div>
             </div>
         </div>
-    `
+    `    
 }
 function HTMLcProduct(con) {
     let URL = `../img/c/c${con}.jpeg`;
@@ -71,33 +98,6 @@ function HTMLcProduct(con) {
                     <div class="btn-group">
                         <button type="button" onclick="cart2('${C[con-1].name}','${C[con-1].price}','${URL}','${con}','${btn}')" class="btn btn-sm btn-outline-secundary" ><a style="color:inherit;" href="/cart">Comprar</a></button>
                         <button id="${btn}" type="button" onclick="cart('${C[con-1].name}','${C[con-1].price}','${URL}','${con}','${btn}')" class="btn btn-sm btn-outline-secundary" > Añadir</button>
-                     </div>
-                     <small class="text-muted">Envio gratis</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `    
-}
-function HTMLdProduct(con) {
-    let URL = `../img/d/d${con}.jpeg`;
-    let btn = `btnD${con}`;
-    return `
-        <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-                <img class="card-img-top" style="height:16rem;" src="${URL}" alt="Card image cap">
-                <div class="card-body">
-                <i style="color:orange;" class="fa fa-star" > </i>
-                <i style="color:orange;" class="fa fa-star" > </i>
-                <i style="color:orange;" class="fa fa-star" > </i>
-                <i style="color:orange;" class="fa fa-star" > </i>
-                <i style="color:orange;" class="fa fa-star" > </i>
-                <p class="card-text">${D[con-1].name}</p>
-                <p class="card-text">${D[con-1].price}.00</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" onclick="cart2('${D[con-1].name}','${D[con-1].price}','${URL}','${con}','${btn}')" class="btn btn-sm btn-outline-secundary" ><a style="color:inherit;" href="/cart">Comprar</a></button>
-                        <button id="${btn}" type="button" onclick="cart('${D[con-1].name}','${D[con-1].price}','${URL}','${con}','${btn}')" class="btn btn-sm btn-outline-secundary" > Añadir</button>
                      </div>
                      <small class="text-muted">Envio gratis</small>
                     </div>
@@ -165,11 +165,11 @@ function cart2(name,price,url,con,btncart) {
 
 (()=>{
     for (let index = 1; index < 6; index++){
-    bDiv.innerHTML+=`${HTMLbProduct(index)}`        
+    bDiv.innerHTML+=`${HTMLaProduct(index)}`        
     }
     for (let index = 1; index < 3; index++) {
-        cDiv.innerHTML+=`${HTMLcProduct(index)}`;
-        dDiv.innerHTML+=`${HTMLdProduct(index)}`;
+        cDiv.innerHTML+=`${HTMLbProduct(index)}`;
+        dDiv.innerHTML+=`${HTMLcProduct(index)}`;
     }
     if(localStorage.getItem("cart")==null){
 
