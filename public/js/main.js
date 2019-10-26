@@ -148,18 +148,19 @@ function cart2(name,price,url,con,btncart) {
         url:url
     }
     cartItems.push(item);
-    let storage= JSON.parse(localStorage.getItem("cart"));
-    if (storage==nul) {
+    let storage = JSON.parse(localStorage.getItem("cart"));
+    if (storage==null) {
         products.push(item);
         localStorage.setItem("cart",JSON.stringify(products));
     } else {
-    products= JSON.parse(localStorage.getItem("cart"));
-    products.push(item);
-    localStorage.setItem("cart",JSON.stringify(products));        
+        products= JSON.parse(localStorage.getItem("cart"));
+        products.push(item);
+        localStorage.setItem("cart",JSON.stringify(products));
     }
-    products= JSON.parse(localStorage.getItem("cart"));
+    products=JSON.parse(localStorage.getItem("cart"));
     cart_n.innerHTML=`[${products.length}]`;
     document.getElementById(btncart).style.display="none";
+    
 }
 
 
